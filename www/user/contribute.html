@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Contribute: The Gospel in Every Passage</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="https://cdn.quilljs.com/1.2.3/quill.snow.css" rel="stylesheet">
+		<script src="https://cdn.quilljs.com/1.2.3/quill.js"></script>
+		<script src="static/public/read.js"></script>
+		<script src="static/user/contribute.js"></script>
+		<style type="text/css">
+			.navbar-inverse .navbar-brand{
+			color: #fff;
+			}
+			@media (max-width: 767px) {
+			  .form-inline .form-control{
+			    display: inline-block;
+			    width: auto;
+			    vertical-align: middle;
+			  }
+			}
+			@media (max-width: 767px) {
+			  .form-inline .form-group{
+			    display: inline-block;
+			    margin-bottom: 0;
+			    vertical-align: middle;
+			  }
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>                        
+		      </button>
+		      <span class="navbar-brand" id="current-page">Contribute</span>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav">
+		      </ul>
+		      <ul class="nav navbar-nav navbar-right">
+ 		        <li><a href="/admin/login"><span class="glyphicon glyphicon-cog"></span> Admin</a></li>
+		        <li><a href="/"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+    	<div class="container" style="margin-bottom: 50px;">
+    		<div id="membership"></div>
+    		<form class="form-inline" id="editCommentary" autocomplete="off">
+			  <fieldset>
+			    <legend>Commentary Entry:</legend>
+			    <div class="form-group">
+		    	<select class="form-control" name="book" id="chooseBook" onchange="changeBook()"></select>
+		    	<select class="form-control" name="chapter" id="chooseChapter" onchange="changeChapter()"></select>
+		    	<select class="form-control" name="verse" id="chooseVerse" onchange="changeVerse()"></select>
+		    	</div>
+			    <label><input type="checkbox" name="multiple" id="multiple"> Multiple verses</label>
+			    <div class="form-group multiple">
+			    	<select class="form-control" name="endChapter" id="chooseEndChapter" onchange="changeEndChapter()"></select>
+			   		<select class="form-control" name="endVerse" id="chooseEndVerse" onchange="changeEndVerse()"></select><br>
+			    </div>
+				<hr><div class="form-control-static" style="width:100%" id="passage"></div>
+			    <div class="form-control" id="editor" style="height:50%;width:100%"></div>
+			    <button type="submit" class="btn btn-default">Save</button>
+			    <i id="saveResponse" style="color:#bbbbbb"></i>
+			  </fieldset>
+			</form>
+			<hr>
+			<p>Currently contributing as: <span id="user"></span></p>
+			<hr>
+			<div id=commentaries></div>
+			<p> Sign in email: <span id="email"></span></p>
+			<p id="formResponse"></p>
+			<form class="form-inline" id="changeUserName" autocomplete="off">
+				<fieldset>
+					<input class="form-control" type="text" name="name" placeholder="New Name">
+					<button class="btn btn-default" type=submit>Change Name</button>
+				</fieldset>
+			</form>
+			<form class="form-inline" id="joinGroup" autocomplete="off">
+				<fieldset>
+					<input class="form-control" type="text" name="group" placeholder="Group Name">
+					<button class="btn btn-default" type=submit>Join Group</button>
+				</fieldset>
+			</form>
+			<form class="form-inline" id="createGroup" autocomplete="off">
+				<fieldset>
+					<input class="form-control" type="text" name="group" placeholder="Group Name">
+					<button class="btn btn-default" type=submit>Create Group</button>
+				</fieldset>
+			</form>
+		</div>
+		
+		<div hidden id="scripture"></div>
+		<div hidden id="commentary"></div>
+	</body>
+</html>

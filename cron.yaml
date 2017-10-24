@@ -1,0 +1,4 @@
+cron:
+ - description: scripture update
+   url: /admin/updatescripture
+   schedule: every 336 hours

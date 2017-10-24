@@ -1,0 +1,41 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+# application: gospel-in-every-passage
+
+default_expiration: "5s"
+
+handlers:
+ - url: /
+   static_files: www/public/read.html
+   upload: www/public/read.html
+
+ - url: /static/public
+   static_dir: www/public
+   
+ - url: /contribute
+   static_files: www/user/contribute.html
+   upload: www/user/contribute.html
+   login: required
+
+ - url: /static/user
+   static_dir: www/user
+   login: required
+   
+ - url: /user/.*
+   script: admin.app
+   login: required
+   
+ - url: /admin/.*
+   script: admin.app
+   login: admin
+   
+
+libraries:
+ - name: webapp2
+   version: latest
+ - name: jinja2
+   version: latest
+   
+builtins:
+- remote_api: on

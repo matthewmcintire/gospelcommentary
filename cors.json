@@ -1,0 +1,15 @@
+[
+    {
+      "origin": ["http://gospel-in-every-passage.appspot.com",
+      "https://gospel-in-every-passage.appspot.com",
+      "http://gospelcommentary.org",
+      "https://gospelcommentary.org",
+      "http://www.gospel-in-every-passage.appspot.com",
+      "https://www.gospel-in-every-passage.appspot.com",
+      "http://www.gospelcommentary.org",
+      "https://www.gospelcommentary.org"],
+      "responseHeader": ["Content-Type"],
+      "method": ["GET", "HEAD", "DELETE"],
+      "maxAgeSeconds": 3600
+    }
+]

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>The Gospel in Every Passage</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			html, body {
+				height: 100vh;
+			}
+			.container{
+			padding-top: 51px;
+  			padding-right: 0;
+  			padding-left: 0;
+			height: 100%;
+			}
+			.stackable{
+			border-style: solid none none none; 
+			border-width: thin;
+			height:49.5%;
+			width:100%;
+  			padding-right: 0px;
+  			padding-left: 0px;
+			}
+			#scripture1{
+			float:left;
+			}
+			#commentary1{
+			float:right;
+			}
+			@media screen and (min-width: 500px) {
+			.stackable{
+			height: 100%;
+			width: 50%;
+			}
+			}
+			.inner-division{
+			height: 98%;
+			overflow:auto;
+			margin-top: 1%;
+			margin-bottom: 1%;
+  			padding-right: 15px;
+  			padding-left: 15px;
+			}
+			.navbar-inverse .navbar-brand{
+			color: #fff;
+			}
+			.navbar navbar-inverse .navbar-fixed-top{
+			margin-bottom: 0;
+			}
+			.dropdown-menu{
+			overflow: auto;
+			}
+			
+		</style>
+		<script src="static/public/read.js"></script>
+		<script>
+		window.onhashchange = getChapter;
+		</script>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>                        
+		      </button>
+		      <span class="navbar-brand" id="current-page"></span>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav">
+		        <li class="dropdown">
+		          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+		          Book <span class="caret"></span></a>
+		          <ul class="dropdown-menu" id="chooseBook"></ul>
+		        </li>
+		        <li class="dropdown">
+		          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+		          Chapter <span class="caret"></span></a>
+		          <ul class="dropdown-menu" id="chooseChapter"></ul>
+		         </li>
+		        <li class="dropdown">
+		          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+		          Version <span class="caret"></span></a>
+		          <ul class="dropdown-menu" id="chooseVersion"></ul>
+		        </li>
+		      </ul>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="contribute"><span class="glyphicon glyphicon-pencil"></span> Contribute</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+		<div class="container">
+				<div class="stackable" id = "scripture1">
+				<div class= "inner-division" id = "scripture"></div>
+				</div> 
+				<div class="stackable" id = "commentary1">
+				<div class= "inner-division" id = "commentary"></div>
+				</div>
+		</div>
+	</body>
+</html>
+	
