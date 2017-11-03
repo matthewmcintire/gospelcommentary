@@ -267,7 +267,15 @@ function displayCommentaries(){
 	$('#commentaries').html(text)
 }
 function publish(i){
-	var j = $('#loadEdit'+i).val();
+	var c = commentaries[i];
+	$.post('/user/publish',
+			{"name":$('#contributeAs').val(),
+			 "verse":c.verse,
+			 "end_verse":c.end_verse,
+			 "edit":$('#loadEdit'+i).val()},
+			function(data){
+					getUser();
+			})
 }
 function loadEdit(i){
 	var j = $('#loadEdit'+i).val();
